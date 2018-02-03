@@ -5,12 +5,12 @@ float[] rightRadii = new float[10];
 void setup() {
   size(640, 640);
   colorMode(HSB, 360, 100, 100);
-  background(color(0, 0, 100));
   smooth(10); // blur/antialias with radius 10
   randomGenerate(); // randomly generate some numbers
 }
 
 void draw() {
+  background(color(0, 0, 100));
   noFill();
   // left side
   for (float seed : leftRadii) {
@@ -37,10 +37,6 @@ void mousePressed() {
 
 // randomly generate numbers and save to left/rightRadii
 void randomGenerate() {
-  // clear screen
-  noStroke();
-  fill(color(0, 0, 100));
-  rect(0, 0, width, height);
   // fill array with random numbers
   for (int i = 0; i < leftRadii.length; i++) {
     leftRadii[i] = random(25);

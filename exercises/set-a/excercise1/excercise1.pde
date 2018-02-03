@@ -11,15 +11,12 @@ int sunYellow = color(252, 245, 3);
 
 void setup() {
   size(800, 600);
-  background(skyBlue);
   font = createFont("sans-serif",32);
 }
 
 void draw() {
   // clear screen
-  noStroke();
-  fill(skyBlue);
-  rect(0, 0, 800, 600);
+  background(skyBlue);
 
   // sun
   pushMatrix(); // start matrix
