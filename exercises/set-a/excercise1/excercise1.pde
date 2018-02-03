@@ -22,12 +22,12 @@ void draw() {
   pushMatrix(); // start matrix
   translate(200, 300); // set (0, 0) to (200, 300)
   fill(sunYellow);
+  stroke(sunYellow);
   ellipse(0, 0, 100, 100);
   // rays (also make it spin cause reasons)
   int rays = 20;
   // ray length follows sine wave
   float rayLength = sin(radians(sunDegrees * 4)) * 15 + 80;
-  stroke(sunYellow);
   strokeWeight(4);
   for (int i = 0; i < rays; i++) {
     // each ray is one `ray`th of a circle apart (i.e. evenly spaced)
