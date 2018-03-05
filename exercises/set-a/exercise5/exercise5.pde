@@ -8,7 +8,8 @@ void setup() {
 }
 
 void draw() {
-  stroke(color(0, 0, 50));
+  // set stroke to be thin and white (or something like that)
+  stroke(color(0, 0, 100));
   strokeWeight(0.5);
   // set RGB color to use mouse's X and Y coords for R and G and a const B
   fill(color(coordX + coordY, 100, 100));
@@ -16,9 +17,11 @@ void draw() {
   ellipse(coordX, coordY, 50, 50);
   coordX += 0.75;
   coordY += 10;
-  if (coordY >= 600) coordY = 0;
+  if (coordY >= 600) {
+    coordY = 0; // on overflow by y, go to top and continue
+  }
   if (coordX >= 300) {
-    reset();
+    reset(); // on overflow by x, clear screen and reset
   }
 }
 
@@ -27,6 +30,7 @@ void mousePressed() {
   reset();
 }
 
+// clear screen and reset variables
 void reset() {
   background(0);
   coordX = 0;
